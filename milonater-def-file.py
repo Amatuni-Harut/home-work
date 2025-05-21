@@ -1,3 +1,5 @@
+#milonater game using def funct and files
+
 import random
 def get_content(fname):
     f=open(fname)
