@@ -8,7 +8,7 @@ def get_land_words(ml):
     return [el.strip() for el in ml if el.strip()]
 def game_logic(i, question_num):
     i_txt, ans1 = i.split('?', 1)  
-    answers = [j.strip() for j in ans1.split(',')]
+    answers = [el.strip() for el in ans1.split(',')]
     true_answer = answers[0]
     random.shuffle(answers)
     print(f"\nQuestion {question_num}: {i_txt.strip()}?")
@@ -27,6 +27,11 @@ def game_logic(i, question_num):
     else:
         print("no")
         return 0
+def write_file(fname,username,count):
+        f=open(fname,"a")
+        f.write(f"{username}:{count}/10\n")
+        f.close()    
+username=input("input username--")
 questions = get_content("questions.txt")
 questions = get_land_words(questions)
 random.shuffle(questions)
@@ -36,4 +41,5 @@ question_num = 1
 for i in questions:
     count += game_logic(i, question_num)
     question_num += 1
-print(count, "/10")
+#username=input("input username--")
+write_file("top.txt",username,count)
