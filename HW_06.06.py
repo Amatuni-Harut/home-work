@@ -12,7 +12,7 @@ def open_folder_reed_file(folder):
     return data            
 
 def write_info_file(md, fname):
-    with open (fname, "w") as f:
+    with open(fname,"w",encoding="utf-8") as f:
         for el in md:
             f.write(el + '\n')
 def main():
