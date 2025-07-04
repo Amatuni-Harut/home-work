@@ -1,28 +1,42 @@
 import os
 import argparse
-def get_folder_sort_grup_files(folder):
-    md = {}
-    for fname in os.listdir(folder):
-        fol_file= os.path.join(folder, fname)
-        if os.path.isfile(fol_file):
-            type_file = os.path.splitext(fname)[1][1:].lower()
-            if not type_file:
-                type_file = 'other'
-            if type_file not in md:
-                md[type_file] = []
-            md[type_file].append(fname)
-    return md
+def create_folder(folder_path):
+    if not os.path.exists(folder_path):
+        try:
+            os.makedirs(folder_path)
+        except:
+            print(f"Error creating folder '{folder_path}'")
+def move_file(file, folder):
+    fname = os.path.basename(file)
+    npath = os.path.join(folder, fname)
+    try:
+        os.rename(file, npath)
+        print(f"Moved '{fname}' to '{folder}/'")
+    except:
+        print(f"Error moving file '{fname}'")
+
+def sort_filees_by_type(folder):
+    if not os.path.isdir(folder):
+        print("not folder")
+        return
+    try:
+        files = os.listdir(folder)
+    except:
+        print("Error reading folder.")
+        return
+    for fname in files:
+        Nfile = os.path.join(folder, fname)
+        if os.path.isfile(Nfile):
+            ml = os.path.splitext(fname)[1][1:].lower()
+            if not ml:
+                ml = "other"
+            target_folder = os.path.join(folder, ml)  
+            create_folder(target_folder)
+            move_file(Nfile, target_folder)  
 def main():
-    parser = argparse.ArgumentParser(description="Grouping files by type in the dictionary.")
-    parser.add_argument("-d", "--directory", required=True, help="Path to directory.")
+    parser = argparse.ArgumentParser(description="Sort files by extension.")
+    parser.add_argument("folder", help="Path to the folder")
     args = parser.parse_args()
-    result = get_folder_sort_grup_files(args.directory)
-    for F_type, file in result.items():
-        print(f"{F_type}: {file}")
+    sort_filees_by_type(args.folder)
 if __name__ == "__main__":
     main()
-
-
-
-
-

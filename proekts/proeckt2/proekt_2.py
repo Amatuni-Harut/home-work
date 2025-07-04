@@ -1,63 +1,73 @@
 import argparse
 import requests
 import json
-
-API_KEY = "0a2fb6badec24771909113419253006"
-BASE_URL = "http://api.weatherapi.com/v1/current.json"
-
-def get_weather_data(city):
-    """Fetch weather data from WeatherAPI.com"""
-    params = {
-        'key': API_KEY,
-        'q': city,
-        'aqi': 'no'
-    }
+API_KEY = '0a2fb6badec24771909113419253006'  
+OPTIONS = {
+    'temperature': 'Temperature (°C)',
+    'humidity': 'Humidity (%)',
+    'pressure': 'Pressure (mBar)',
+    'wind': 'Wind speed (km/h)',
+    'condition': 'Weather description'
+}
+def weather_info_input(city):
     try:
-        response = requests.get(BASE_URL, params=params)
+        url = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}&aqi=no"
+        response = requests.get(url, timeout=10)
         response.raise_for_status()
         return response.json()
-    except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
+    except:
+        print("Failed to get weather data.")
         return None
-def display_weather_data(data, filter_param=None):
-    if not data:
-        print("No data")
-        return
-    if "error" in data:
-        print(f"Error: {data['error'].get('message', 'Unknown error')}")
-        return
-
-    weather_info = {
-        'City': data['location']['name'],
-        'Country': data['location']['country'],
-        'Temperature': f"{data['current']['temp_c']} °C",
-        'Feels like': f"{data['current']['feelslike_c']} °C",
-    }
-    if filter_param:
-        if filter_param in weather_info:
-            print(f"\n{filter_param}: {weather_info[filter_param]}")
+def weather_info(data, option=None):
+    try:
+        current = data['current']
+        location = data['location']
+        print(f"Weather in {location['name']}, {location['country']}")
+        if option:
+            if option == 'temperature':
+                print("temperature --", current['temp_c'], "°C")
+            elif option == 'humidity':
+                print("humidity --", current['humidity'], "%")
+            elif option == 'pressure':
+                print("pressure --", current['pressure_mb'], "mBar")
+            elif option == 'wind':
+                print("wind speed --", current['wind_kph'], "km/h")
+            elif option == 'condition':
+                print("condition --", current['condition']['text'])
+            else:
+                print("Use --options to see available options.")
         else:
-            print(f"\nParameter '{filter_param}' not found. Available parameters:")
-            list_available_parameters()
-    else:
-        print("\nFull weather information:")
-        for key, value in weather_info.items():
-            print(f"{key}: {value}")
-def list_available_parameters():
-    print("\nAvailable parameters for filtering:")
-    print("- Temperature")
-    print("- Feels like")
+            print(json.dumps(current, indent=4))
+    except:
+        print("Error while showing weather.")
+def option_info():
+    print("Available options:")
+    for key, desc in OPTIONS.items():
+        print(f"  {key}: {desc}")
 def main():
-    parser = argparse.ArgumentParser(description='Weather forecast program (WeatherAPI.com)')
-    parser.add_argument('city', type=str, help='City name')
-    parser.add_argument('--filter', type=str, help='Filter parameter')
-    parser.add_argument('--list', action='store_true', help='Show available parameters')
+    parser = argparse.ArgumentParser(description="This is a weather program")
+    parser.add_argument('city', help="City name")
+    parser.add_argument('--option', help="Specific weather info to show")
+    parser.add_argument('--options', action='store_true', help="Show available options")
     args = parser.parse_args()
-    if args.list:
-        list_available_parameters()
+    if args.options:
+        option_info()
         return
-    weather_data = get_weather_data(args.city)
-    if weather_data:
-        display_weather_data(weather_data, args.filter)
-if __name__ == "__main__":
+    data = weather_info_input(args.city)
+    if data:
+        weather_info(data, args.option)
+if __name__ == '__main__':
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
