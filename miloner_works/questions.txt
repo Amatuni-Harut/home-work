@@ -1,0 +1,22 @@
+What is the capital of France? Paris,Berlin,Madrid,Rome
+How many planets are in the Solar System? 8,7,9,10
+Who wrote 'War and Peace'? Leo Tolstoy,Fyodor Dostoevsky,Anton Chekhov,Ivan Turgenev
+Which gas is most abundant in Earth's atmosphere? Nitrogen,Oxygen,Carbon dioxide,Hydrogen
+What is the deepest lake in the world? Baikal,Victoria,Tanganyika,Caspian Sea
+Who discovered the law of gravity? Isaac Newton,Albert Einstein,Galileo Galilei,Johannes Kepler
+What is the most spoken language in the world? Mandarin Chinese,English,Spanish,Hindi
+What is the longest river in the world? Nile,Amazon,Yangtze,Mississippi
+In which year did World War II begin? 1939,1937,1941,1945
+Who painted the 'Mona Lisa'? Leonardo da Vinci,Vincent van Gogh,Pablo Picasso,Michelangelo
+What is the largest mammal? Blue whale,Elephant,Giraffe,Polar bear
+What is Earth's natural satellite called? Moon,Phobos,Europa,Titan
+Which chemical element is 'Au'? Gold,Silver,Aluminum,Argon
+Who was the first human in space? Yuri Gagarin,Neil Armstrong,John Glenn,Valentina Tereshkova
+What is the tallest mountain in the world? Mount Everest,Kilimanjaro,Aconcagua,Denali
+Which programming language was created by Guido van Rossum? Python,Java,C++,JavaScript
+In which country is the Statue of Liberty located? USA,UK,France,Canada
+Which gas do humans need to breathe? Oxygen,Nitrogen,Carbon dioxide,Hydrogen
+Who wrote 'Hamlet'? William Shakespeare,Charles Dickens,Mark Twain,Oscar Wilde
+Which metal is the lightest? Lithium,Aluminum,Magnesium,Titanium
+What is the fastest land animal? Cheetah,Lion,Antelope,Horse
+What is the process of water turning into vapor called? Evaporation,Condensation,Freezing,Sublimation
