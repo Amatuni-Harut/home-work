@@ -1,0 +1,71 @@
+1 Create a program, which will show the statistics of the cryptocurrencies, with the
+following information: Name, Symbol, Current price, Market Cap, Total Volume, Price
+Change for 24 hours.
+* Provide filters: based on the name, based on the value.(if value is greater than XXX)
+* * Show the statistics every 5 seconds
+
+argpars
+requests
+json   
+json.load() or json.loads()
+json.dump or  json.dumps
+
+httos methods using get  method
+
+vercvi api u infon tanq
+
+
+
+
+
+
+
+
+
+2 Create a weather forecast program. It will take a required argument: the city name. It will
+show all the weather information for that city. The program can also take another
+argument, either temperature or density or other (based on the options that provide the
+API). The user should be able to see the list of those options.
+
+argpars
+requests
+json
+
+
+
+
+
+
+3 Hangman Game: Implement the classic word-guessing game, Hangman, where
+players try to guess a hidden word one letter at a time. Display the current state
+of the word, the letters guessed so far, and allow a limited number of incorrect
+guesses before the game ends.
+
+visilica bti nkarvi  kodov 
+
+
+4 Create a program that will separate the files based on the types(docs, pdf, jpg, etc). The
+source directory should be passed as an argument.
+script bti grvi or erb -d keneq inchor directr i meji sax faylery kdasavore yst tiperi kstece diretorianer orinak 
+pdf png ev ayln u en sax faylery mej kce ys iranc anuneri
+
+
+
+
+
+
+5 Word Frequency Counter: Write a program that analyzes a text file and counts the
+frequency of each word. Remove common stop words and punctuation marks to
+get more accurate results. Display the top N most frequent words and their
+frequencies.
+
+
+
+
+6 unin1q  db txt vori mej ka 10 mard anun azganun age masnagitutyun , verjnakanum bti stacvi exzel ship vor meh btigrac exni
+name surname age  masnagituyun vervi toxy exni dexin nerkac u hast grac
+25 <age  nerkvac exni green
+pythhon3 script.py -f db.txt
+-x output.xlsx
+-a 'yes"  anunnery dasavorel aybenakan kargov 
+-p programer sarqe 2 rd shit mejy qce sax prog u ytpes mius masnagitutyunnery

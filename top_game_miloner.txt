@@ -1,3 +1,6 @@
 Harut:5/10
 Jhon:3/10
+<<<<<<< HEAD
 player1:2/10
+=======
+>>>>>>> 68b3bcee25df277a937cf8e485abcfcbc7c64c45

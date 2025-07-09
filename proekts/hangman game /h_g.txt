@@ -1,0 +1,11 @@
+python
+programming
+computer
+algorithm
+developer
+hangman
+keyboard
+software
+variable
+function
+database
