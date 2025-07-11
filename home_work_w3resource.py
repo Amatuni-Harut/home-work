@@ -1,3 +1,10 @@
+""" Write a Python class Employee with attributes like emp_id, emp_name, emp_salary,
+ and emp_department and methods like calculate_emp_salary, emp_assign_department, and print_employee_details.
+Use 'assign_department' method to change the department of an employee.
+Use 'print_employee_details' method to print the details of an employee.
+Use 'calculate_emp_salary' method takes two arguments: salary and hours_worked,
+ which is the number of hours worked by the employee. If the number of hours
+   worked is more than 50, the method computes overtime and adds it to the salary. Overtime is calculated as following formula:"""
 class Employee:
     def __init__(self, id, n, s, d):
         self.__empId = id
