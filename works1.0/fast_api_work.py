@@ -1,15 +1,14 @@
+"""
 from fastapi import FastAPI
-
 app = FastAPI()
 
 users = [{"username": "James", "email": "james@gmail.com"},
         {"username": "John", "email": "john@gmail.com"}]
-
 @app.get("/users")
 def get_users():
     return users
 
-@app.get("/users/username")
+@app.get("/users/{username}")
 def get_user(username):
     for user in users:
         if user["username"] == username:
@@ -30,4 +29,11 @@ def delete_user(email):
         if user["email"] == email:
             users.remove(user)
             return {"message": "User is deleted "}
-    return {"message": "Email not found in database"}
+    return {"message": "Email not found in database"}"""
+
+
+
+
+""" 
+
+"""
