@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException, Query
 from sqlmodel import SQLModel, Session, Field, create_engine, select
 from typing import List, Optional
-from pydantic import validator
+from pydantic import validator, BaseModel
 
 class MenuItem(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
